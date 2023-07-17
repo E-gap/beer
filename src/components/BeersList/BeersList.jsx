@@ -3,7 +3,9 @@ import { useBeerStore } from "../../stores/useBeerStore";
 import { Link } from "react-router-dom";
 
 const BeersList = ({ beers }) => {
-  const toSelectBeer = useBeerStore((state) => state.toSelectBeer);
+  const { toSelectBeer } = useBeerStore((state) => ({
+    toSelectBeer: state.toSelectBeer,
+  }));
 
   const selectBeer = (id, event) => {
     if (event.button === 2) {

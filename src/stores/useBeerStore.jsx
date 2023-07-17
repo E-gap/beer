@@ -9,11 +9,13 @@ export const instance = axios.create({
 export const useBeerStore = create(
   devtools((set) => ({
     beers: [],
+    page: 1,
     selectedBeers: [],
+    increasePage: () => set((state) => ({ page: state.page + 1 })),
     addBeers: (page) =>
-      set(async () => {
+      set(async (state) => {
         const result = await instance.get(`/beers?page=${page}`);
-        set({ beers: result.data });
+        set({ beers: [...state.beers, ...result.data] });
       }),
     toSelectBeer: (id) =>
       set((state) => {
@@ -29,7 +31,6 @@ export const useBeerStore = create(
         let difference = state.beers.filter(
           (item) => !state.selectedBeers.includes(item.id)
         );
-        console.log(difference);
         return { beers: [...difference], selectedBeers: [] };
       }),
   }))
