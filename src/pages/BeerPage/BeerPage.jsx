@@ -31,7 +31,7 @@ const BeerPage = () => {
               alt="appearance beer"
               className={css.photoBeer}
             />
-            <p>Beer Name: {beer.name}</p>
+            <p className={css.name}>Beer Name: {beer.name}</p>
             <p>Description: {beer.description}</p>
             <p>First Brewed: {beer.first_brewed}</p>
             <p className={css.ingredients}>Ingredients:</p>

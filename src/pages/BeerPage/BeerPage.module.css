@@ -28,7 +28,8 @@ table thead {
   border: 1px solid grey;
 }
 
-.ingredients {
+.ingredients,
+.name {
   text-align: center;
   text-decoration: underline;
   font-weight: 700;
