@@ -1,7 +1,27 @@
 .item {
-  border: 1px solid blue;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+  border: 1px dotted blue;
 }
 
 .item:hover {
   cursor: pointer;
+}
+
+.beerList {
+  text-decoration: none;
+}
+
+.name {
+  text-decoration: underline;
+  font-weight: 800;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }

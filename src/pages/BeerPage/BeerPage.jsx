@@ -20,7 +20,7 @@ const BeerPage = () => {
   console.log(beer);
 
   return (
-    <div className={css.mainPage}>
+    <div className={css.beerPage}>
       <Container>
         {beer && (
           <div>
@@ -29,12 +29,13 @@ const BeerPage = () => {
               width={50}
               height={170}
               alt="appearance beer"
+              className={css.photoBeer}
             />
             <p>Beer Name: {beer.name}</p>
             <p>Description: {beer.description}</p>
             <p>First Brewed: {beer.first_brewed}</p>
-            <p>Ingredients:</p>
-            <table className={css.ransactionhistory}>
+            <p className={css.ingredients}>Ingredients:</p>
+            <table className={css.tableIngredients}>
               <thead>
                 <tr>
                   <th>Add</th>

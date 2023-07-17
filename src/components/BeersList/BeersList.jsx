@@ -12,7 +12,7 @@ const BeersList = ({ beers }) => {
   };
 
   return (
-    <ul>
+    <ul clzssName={css.beerList}>
       {beers.map((item) => {
         return (
           <li
@@ -20,9 +20,9 @@ const BeersList = ({ beers }) => {
             className={css.item}
             onMouseDown={(event) => selectBeer(item.id, event)}
           >
-            <Link to={`/${item.id}`}>
-              <p>{item.id}</p>
-              <p>{item.description}</p>
+            <Link to={`/${item.id}`} className={css.link}>
+              <p className={css.name}>Name: {item.name}</p>
+              <p>Description: {item.description}</p>
               <img
                 src={item.image_url}
                 width={50}
