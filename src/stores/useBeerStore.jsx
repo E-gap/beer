@@ -7,7 +7,7 @@ export const instance = axios.create({
 });
 
 export const useBeerStore = create(
-  devtools((set, get) => ({
+  devtools((set) => ({
     beers: [],
     selectedBeers: [],
     addBeers: () =>
@@ -24,6 +24,13 @@ export const useBeerStore = create(
             selectedBeers: state.selectedBeers.filter((item) => item !== id),
           };
       }),
-    deleteBeers: () => set((state) => {}),
+    deleteBeers: () =>
+      set((state) => {
+        let difference = state.beers.filter(
+          (item) => !state.selectedBeers.includes(item.id)
+        );
+        console.log(difference);
+        return { beers: [...difference], selectedBeers: [] };
+      }),
   }))
 );
