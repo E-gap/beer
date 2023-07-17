@@ -23,7 +23,7 @@ const BeerPage = () => {
     <div className={css.beerPage}>
       <Container>
         {beer && (
-          <div>
+          <div className={css.beerItem}>
             <img
               src={beer.image_url}
               width={50}
@@ -32,8 +32,8 @@ const BeerPage = () => {
               className={css.photoBeer}
             />
             <p className={css.name}>Beer Name: {beer.name}</p>
-            <p>Description: {beer.description}</p>
-            <p>First Brewed: {beer.first_brewed}</p>
+            <p className={css.description}>Description: {beer.description}</p>
+            <p className={css.brewed}>First Brewed: {beer.first_brewed}</p>
             <p className={css.ingredients}>Ingredients:</p>
             <table className={css.tableIngredients}>
               <thead>

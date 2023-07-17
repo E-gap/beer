@@ -3,6 +3,17 @@
   padding-bottom: 20px;
 }
 
+.beerItem {
+  width: 80%;
+  border: 2px dotted green;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .photoBeer {
   margin-left: auto;
   margin-right: auto;
@@ -29,8 +40,14 @@ table thead {
 }
 
 .ingredients,
-.name {
+.name,
+.description,
+.brewed {
   text-align: center;
+}
+
+.ingredients,
+.name {
   text-decoration: underline;
   font-weight: 700;
 }
