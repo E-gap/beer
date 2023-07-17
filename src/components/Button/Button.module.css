@@ -1,0 +1,11 @@
+.button {
+  position: fixed;
+  left: 50%;
+  background-color: red;
+  transform: translateX(-50%);
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: aqua;
+}

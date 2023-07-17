@@ -4,8 +4,6 @@
   height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid red;
   padding-left: 10px;
   padding-right: 10px;
-  overflow-y: auto;
 }

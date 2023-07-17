@@ -10,9 +10,9 @@ export const useBeerStore = create(
   devtools((set) => ({
     beers: [],
     selectedBeers: [],
-    addBeers: () =>
+    addBeers: (page) =>
       set(async () => {
-        const result = await instance.get("/beers?page=1");
+        const result = await instance.get(`/beers?page=${page}`);
         set({ beers: result.data });
       }),
     toSelectBeer: (id) =>

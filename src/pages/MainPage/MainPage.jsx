@@ -18,7 +18,7 @@ const MainPage = () => {
   );
 
   useEffect(() => {
-    addBeers();
+    addBeers(1);
   }, [addBeers]);
 
   return (

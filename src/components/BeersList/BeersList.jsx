@@ -12,7 +12,7 @@ const BeersList = ({ beers }) => {
   };
 
   return (
-    <ul clzssName={css.beerList}>
+    <ul className={css.beerList}>
       {beers.map((item) => {
         return (
           <li
