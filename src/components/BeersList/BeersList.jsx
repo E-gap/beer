@@ -3,8 +3,9 @@ import { useBeerStore } from "../../stores/useBeerStore";
 import { Link } from "react-router-dom";
 
 const BeersList = ({ beers }) => {
-  const { toSelectBeer } = useBeerStore((state) => ({
+  const { selectedBeers, toSelectBeer } = useBeerStore((state) => ({
     toSelectBeer: state.toSelectBeer,
+    selectedBeers: state.selectedBeers,
   }));
 
   const selectBeer = (id, event) => {
@@ -13,13 +14,20 @@ const BeersList = ({ beers }) => {
     }
   };
 
+  console.log(selectedBeers);
+
   return (
     <ul className={css.beerList}>
       {beers.map((item) => {
         return (
           <li
             key={item.id}
-            className={css.item}
+            /* className={ css.item } */
+            className={
+              !selectedBeers.includes(item.id)
+                ? css.item
+                : `${css.itemSelected} ${css.item}`
+            }
             onMouseDown={(event) => selectBeer(item.id, event)}
           >
             <Link to={`/${item.id}`} className={css.link}>
